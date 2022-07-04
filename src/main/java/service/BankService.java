@@ -7,11 +7,18 @@ import javax.jws.*;
 
 import metier.Account;
 
-@WebService(name="BankWS")
+@WebService
 public class BankService {
     @WebMethod
-    public double conversion(@WebParam double amount) {
-        return amount * 11.3;
+    public double xofToEuro(@WebParam(name = "amount")double amount) 
+    {    
+        return amount / 654.91;
+    }
+
+    @WebMethod
+    public double euroToXof(@WebParam(name = "amount")double amount) 
+    {    
+        return amount * 654.91;
     }
 
     @WebMethod
